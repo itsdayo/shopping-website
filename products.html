@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+   File: products.html
+   Author: ICT-4305 as-provided
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACME Shirts Products</title>
+    <link href="css/acme_styles.css" rel="stylesheet" />
+    <!-- link to external css file -->
+  </head>
+
+  <body>
+    <header>
+      <!-- ACME logo image -->
+      <img src="images/Acme_logo.png" alt="ACME Logo Image" />
+      <script src="js/shirts_website.js"></script>
+      <script type="text/javascript" src="../products.js"></script>
+    </header>
+
+    <nav>
+      <!-- navigation links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- content area of web page -->
+      <h1>ACME Shirts</h1>
+      <h2>Short Sleeve</h2>
+      <!-- ACME Shirts Headings -->
+      <!-- <p id="shortSleeve">Insert your JSON Short Sleeve Shirts file contents here</p> -->
+
+      <p id="shortSleeve"></p>
+      <!-- Short Sleeve JSON file content -->
+
+      <h2>Long Sleeve</h2>
+      <!-- <p id = "longSleeve">Insert your JSON Long Sleeve Shirts file contents here</p> -->
+
+      <p id="longSleeve"></p>
+      <!-- Long Sleeve JSON file content -->
+    </main>
+
+    <footer>
+      <!-- footer content -->
+      <p>University of Denver University College</p>
+      <p>2021</p>
+    </footer>
+
+    <script>
+      // function checkIfUserExist() {
+      //   const key = sessionStorage.getItem("sessionKey");
+      //   if (!key) {
+      //     return false;
+      //   } else return true;
+      // }
+
+      // const userExist = checkIfUserExist();
+
+      // if (!userExist) {
+      //   window.location.href = "login.html";
+      // } else {
+      //   const screenName = localStorage.getItem("screenName");
+
+      //       document.getElementById("greeting").innerHTML = `
+      //   <h2 > Welcome Back ${screenName}</h2>`;
+      //     }
+      displayProducts(products);
+    </script>
+  </body>
+</html>

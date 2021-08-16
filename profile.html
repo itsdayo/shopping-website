@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+   File: profile.html
+   Author: ICT-4305 as-provided
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACME Shirts Profile Settings</title>
+    <link href="css/acme_styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <!-- ACME logo image -->
+      <img src="images/Acme_logo.png" alt="ACME Logo Image" />
+      <script src="js/shirts_website.js"></script>
+    </header>
+
+    <nav>
+      <!-- navigation links -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- content area of web page -->
+      <h1>Change Your ACME Shirts Profile</h1>
+      <h2>ACME Shirts We Know Style</h2>
+      <p id="greeting"></p>
+
+      <div id="formBox" class="regularBox">
+        <!-- registration form -->
+        <form id="profileForm" method="" action="">
+          <p>
+            <label for="screenName">NEW Screen Name:</label>
+            <input id="screenName" name="screenName" type="text" />
+          </p>
+          <p>
+            <!-- drop down list of color options -->
+            <label for="backgroundColor">NEW Background Color:</label>
+            <select id="backgroundColor">
+              <option value="#A3A3A2">Default Antique White</option>
+              <option value="#265B6A">Dark Turquoise</option>
+              <option value="#482E74">Purple</option>
+              <option value="#7A9F35">Lime Green</option>
+            </select>
+          </p>
+          <p>
+            <!-- drop down list of color options -->
+            <label for="buttonColors">NEW Button Color:</label>
+            <select id="buttonColors">
+              <option value="white">Default White</option>
+              <option value="#430AFC">Blue</option>
+              <option value="#FF000D">Red</option>
+              <option value="#AAA039">Yellow</option>
+            </select>
+          </p>
+          <p>
+            <input
+              id="formButton"
+              type="button"
+              value="Submit"
+              class="submit"
+              onclick="profileChange()"
+            />
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <!-- footer content -->
+      <p>University of Denver University College</p>
+      <p>2021</p>
+    </footer>
+    <!-- script tags go here -->
+    <script>
+      function checkIfUserExist() {
+        const key = sessionStorage.getItem("sessionKey");
+        if (!key) {
+          return false;
+        } else return true;
+      }
+
+      const userExist = checkIfUserExist();
+
+      if (!userExist) {
+        window.location.href = "login.html";
+      } else {
+        const screenName = localStorage.getItem("screenName");
+
+        document.getElementById("greeting").innerHTML = `
+    <h2 > Welcome Back ${screenName}</h2>`;
+      }
+    </script>
+  </body>
+</html>
